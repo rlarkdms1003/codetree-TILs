@@ -1,9 +1,10 @@
 #include <stdio.h>
 
 int main() {
-    int n;
+    int n, area;
     scanf("%d", &n);
-    printf("%d", n*n);
+    area = n*n;
+    printf("%d", area);
     if (n < 5) {
         printf("tiny");
     }
