@@ -2,7 +2,7 @@
 
 int main() {
     double a;
-    scanf("%.lf", &a);
+    scanf("%lf", &a);
 
     if (a>=1.0) {
         printf("High");
