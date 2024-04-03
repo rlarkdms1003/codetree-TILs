@@ -3,7 +3,7 @@
 int main() {
     int score;
     scanf("%d", &score);
-    if (score = 100) {
+    if (score == 100) {
         printf("pass");
     }
     else {
