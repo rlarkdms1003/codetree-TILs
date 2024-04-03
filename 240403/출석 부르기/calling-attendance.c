@@ -13,7 +13,7 @@ int main() {
         printf("Paul");
     }
     else {
-        printf("vacancy");
+        printf("Vacancy");
     }
     return 0;
 }
