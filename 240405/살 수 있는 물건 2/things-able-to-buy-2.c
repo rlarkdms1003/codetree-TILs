@@ -12,5 +12,8 @@ int main() {
     else if (n>=500) {
         printf("pen");
     }
+    else {
+        printf("no");
+    }
     return 0;
 }
