@@ -7,7 +7,7 @@ int main() {
         printf("Superior");
     }
     else if (al=='A') {
-        printf("Excellemt");
+        printf("Excellent");
     }
     else if (al=='B') {
         printf("Good");
