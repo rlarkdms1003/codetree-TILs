@@ -4,9 +4,6 @@ int main() {
     int n;
     scanf("%d", &n);
     if (n%2==1) { 
-        if (n==9) {
-            printf("30");
-        }
         printf("31");
     }
     else if (n==2) {
@@ -15,6 +12,9 @@ int main() {
     else if (n==8) {
         printf("31");
         
+    }
+    else if (n==9) {
+        printf("30");
     }
     else {
         printf("30");
