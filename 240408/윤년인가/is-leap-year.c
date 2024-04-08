@@ -6,7 +6,7 @@ int main() {
     if (y%4==0) {
         printf("true");
     }
-    else if (y%100==0 && y%400!=0) {
+    else if ((y%100==0) && (y%400!=0)) {
         printf("false");
     }
     else {
