@@ -21,6 +21,9 @@ int main() {
     else if (n==10) {
         printf("31");
     }
+    else if (n==12) {
+        printf("31");
+    }
     else {
         printf("30");
     }
