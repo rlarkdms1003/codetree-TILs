@@ -7,6 +7,12 @@ int main() {
     if (a_math > b_math && (a_eng <= b_eng || a_eng > b_eng)) {
         printf("A");
     }
+    else if (a_math == b_math && a_eng > b_eng) {
+        printf("A");
+    }
+    else if (a_math == b_math && a_eng < b_eng) {
+        printf("B");
+    }
     else {
         printf("B");
     }
