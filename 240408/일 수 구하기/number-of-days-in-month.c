@@ -18,6 +18,9 @@ int main() {
         printf("31");
         
     }
+    else if (n==10) {
+        printf("31");
+    }
     else {
         printf("30");
     }
