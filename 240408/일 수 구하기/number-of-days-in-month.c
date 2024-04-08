@@ -9,6 +9,9 @@ int main() {
     else if (n==2) {
         printf("28");
     }
+    else if (n==8) {
+        printf("31");
+    }
     else {
         printf("30");
     }
