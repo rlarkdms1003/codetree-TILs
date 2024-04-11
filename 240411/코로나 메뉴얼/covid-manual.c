@@ -12,6 +12,13 @@ int main() {
     else if((a_cold=='Y' && a_temp>=37) && (b_cold=='Y' && b_temp>=37 || c_cold=='Y' && c_temp>=37)) {
         printf("A");
     }
-    else if()
+    else if((b_cold=='Y' && b_temp>=37) && (c_cold=='Y' && c_temp=='Y')) {
+        printf("A");
+        }
+        if('A'>=2) {
+            printf("E");
+        }
+        else printf("N");
+
     return 0;
 }
