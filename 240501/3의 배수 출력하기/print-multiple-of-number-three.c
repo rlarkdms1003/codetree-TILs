@@ -6,9 +6,10 @@ int main() {
     while(i<n) {
         if(i%3==0) {
             i+=3;
+            printf("%d ", i);
 
         }
-        printf("%d ", i);
+
     }
     return 0;
 }
