@@ -9,6 +9,9 @@ int main() {
             printf("%d ", i);
 
         }
+        else {
+            i++;
+        }
 
     }
     return 0;
