@@ -1,18 +1,13 @@
 #include <stdio.h>
 
 int main() {
-    int n,i=0;
+    int n;
+    int i=3;
     scanf("%d",&n);
-    while(i<n) {
-        if(i%3==0) {
-            i+=3;
+    while(i<=n) {
             printf("%d ", i);
-
+            i+=3;
         }
-        else {
-            i++;
-        }
-
-    }
+    
     return 0;
 }
