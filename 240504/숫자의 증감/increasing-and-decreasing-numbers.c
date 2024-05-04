@@ -11,7 +11,7 @@ int main() {
     }
     else if(c='D') {
         for(int i=1; i<=n; i--)
-        printf("%d ", i);
+        printf("%d ", n-i);
     }
     return 0;
 }
