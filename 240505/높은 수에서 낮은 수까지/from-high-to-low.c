@@ -10,7 +10,7 @@ int main() {
         }
     }
     else {
-        for(i=a; i>b; i--) {
+        for(i=a; i>=b; i--) {
             printf("%d ", a);
             a-=1;
         }
