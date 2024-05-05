@@ -5,7 +5,7 @@ int main() {
     int cnt=0;
     for(i=0; i<10; i++) {
         scanf("%d\n", &n);
-        if(i%2==1) {
+        if(n%2==1) {
             cnt++;
         }
     }
