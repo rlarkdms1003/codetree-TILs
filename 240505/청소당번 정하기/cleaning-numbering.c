@@ -4,7 +4,7 @@ int main() {
     int n, i;
     int cls=0; int cor=0; int rest=0;
     scanf("%d", &n);
-    for(i=1; i<n; i++) {
+    for(i=1; i<=n; i++) {
         if(i%12==0) {
             rest++;
         }
