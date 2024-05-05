@@ -8,7 +8,7 @@ int main() {
         if(i%12==0) {
             rest++;
         }
-        else if(i%3==0) {
+        else if(i%3==0 && i%2==0 || i%3==0) {
             cor++;
         }
         else if(i%2==0) {
