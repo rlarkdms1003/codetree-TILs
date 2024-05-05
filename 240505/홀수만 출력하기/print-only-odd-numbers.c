@@ -6,8 +6,8 @@ int main() {
     for(i= 1; i<=N; i++) {
         int i=a;
         scanf("%d\n", &a);
-        if(i%2==1 && i%3==0) {
-            printf("%d\n", i);
+        if(a%2==1 && a%3==0) {
+            printf("%d\n", a);
         }
     }
     return 0;
