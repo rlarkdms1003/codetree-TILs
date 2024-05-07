@@ -1,13 +1,13 @@
 #include <stdio.h>
 
 int main() {
-    int n, N, i;
+    int n, i;
     int sum_val=0;
     scanf("%d", &n);
     for(i=1; i<=n; i++) {
         scanf("%d/n", &n);
-        if(N%2==1 && N%3==0) {
-            sum_val += N;
+        if(n%2==1 && n%3==0) {
+            sum_val += n;
         }
     }
     printf("%d", sum_val);
