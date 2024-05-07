@@ -7,7 +7,7 @@ int main() {
     for(i=0; i<n; i++) {
         scanf("%d/n", &n);
         if(n%2==1 && n%3==0) {
-            sum_val += i;
+            sum_val += n;
         }
     }
     printf("%d", sum_val);
