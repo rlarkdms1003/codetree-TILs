@@ -7,11 +7,14 @@ int main() {
     for(int i=0; i<5; i++) {
         scanf("%d\n", &n);
         if(i%3==0) {
-            satisfied == true;
+            satisfied == false;
             cnt++;
         }
     }
-    if(cnt==4) {
+    if(cnt==5) {
+        satisfied = false;
+    }
+    if(satisfied == false) {
         printf("1");
     }
     else {
