@@ -11,7 +11,7 @@ int main() {
             cnt++;
         }
     }
-    if(cnt>0) {
+    if(cnt==5) {
         printf("1");
     }
     else {
