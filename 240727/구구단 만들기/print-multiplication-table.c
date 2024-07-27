@@ -75,12 +75,7 @@ else {if(a%2==0 && b%2==0) {
             printf("\n");
         }
     }         
-    if(a==b && a%2==0) {
-            for(int i=1; i<10; i++) {
-            printf("%d * %d = %d", a, i, a*i);
-            printf("\n");
-            }
-        }
+   
     }
 
     return 0;
