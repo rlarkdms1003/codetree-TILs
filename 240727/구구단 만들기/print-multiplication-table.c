@@ -4,9 +4,9 @@ int main() {
     int a, b;
     scanf("%d %d", &a, &b);
     if(b > a) {
-        if(b%2==0) {
+        if(b%2==0 && a%2==0) {
             for(int j=1; j<10; j++) {
-                for(int i=b; i>a; i-=2) {
+                for(int i=b; i>=a; i-=2) {
                 printf("%d * %d = %d", i, j, i*j);
                 if(i>a) {
                 printf(" / ");
@@ -14,7 +14,40 @@ int main() {
         }
         printf("\n");
     }
-    }   
+    }
+    if(b%2==0 && a%2==1) {
+            for(int j=1; j<10; j++) {
+                for(int i=b; i>=a; i-=2) {
+                printf("%d * %d = %d", i, j, i*j);
+                if(i>a+1) {
+                printf(" / ");
+            }
+        }
+        printf("\n");
+    }
+    }
+    if(b%2==1 && a%2==0) {
+            for(int j=1; j<10; j++) {
+                for(int i=b-1; i>=a; i-=2) {
+                printf("%d * %d = %d", i, j, i*j);
+                if(i>a) {
+                printf(" / ");
+            }
+        }
+        printf("\n");
+    }
+    }
+    if(b%2==1 && a%2==1) {
+            for(int j=1; j<10; j++) {
+                for(int i=b-1; i>=a; i-=2) {
+                printf("%d * %d = %d", i, j, i*j);
+                if(i>a+1) {
+                printf(" / ");
+            }
+        }
+        printf("\n");
+    }
+    }            
     else if(a!=b && b%2==1) {
             for(int j=1; j<10; j++) {
                 for(int i=a-1; i>b; i-=2) {
