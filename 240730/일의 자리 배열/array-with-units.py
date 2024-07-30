@@ -1,7 +1,8 @@
-arr = input()
-arr[1], arr[2] = list(map(int, input().split()))
+a, b = tuple(map(int, input().split()))
+arr = []
+arr.append(a)
+arr.append(b)
+for i in range(2, 10):
+    arr.append((arr[i-2]+ arr[i-1]) % 10)
 
-for i in range(3,11):
-    arr[i] = arr[i-1] + arr[i-2] %10
-for i in range(1, 11):
-    print(arr[i], end=' ')
+print(*arr)
