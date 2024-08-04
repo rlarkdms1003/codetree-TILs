@@ -1,6 +1,4 @@
-arr1 = tuple(map(int, input().split()))
-n = arr1[0]
-m = arr1[1]
+n, m = (map(int, input().split()))
 arr2 = [list(map(int , input().split()))
         for _ in range(n)]
 arr3 = [list(map(int ,input().split()))
