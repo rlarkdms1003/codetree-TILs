@@ -6,8 +6,8 @@ arr2 = [list(map(int , input().split()))
 arr3 = [list(map(int ,input().split()))
         for _ in range(m)]
 arr4 = [
-    [ 0 for _ in range(n)]
-    for _ in range(m)
+    [ 0 for _ in range(m)]
+    for _ in range(n)
 ]
 for i in range(n):
     for j in range(m):
