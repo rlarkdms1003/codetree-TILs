@@ -2,7 +2,7 @@ n, m = (map(int, input().split()))
 arr2 = [list(map(int , input().split()))
         for _ in range(n)]
 arr3 = [list(map(int ,input().split()))
-        for _ in range(m)]
+        for _ in range(n)]
 arr4 = [
     [ 0 for _ in range(m)]
     for _ in range(n)
