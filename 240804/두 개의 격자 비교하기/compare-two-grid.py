@@ -16,7 +16,7 @@ for i in range(n):
         else:
             arr4[i][j] = 1
 
-for i in range(n):
-    for j in range(m):
-        print(arr4[i][j], end = ' ')
+for row in arr4:
+    for elem in row:
+        print(elem, end = ' ')
     print()
