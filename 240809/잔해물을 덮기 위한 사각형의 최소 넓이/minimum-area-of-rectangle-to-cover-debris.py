@@ -1,26 +1,49 @@
-x1_1, y1_1, x2_1, y2_1 = map(int, input().split())
-x1_2, y1_2, x2_2, y2_2 = map(int, input().split())
+OFFSET = 1000
+MAX_R = 2000
 
-x_overlap_start = max(x1_1, x1_2)
-x_overlap_end = min(x2_1, x2_2)
-y_overlap_start = max(y1_1, y1_2)
-y_overlap_end = min(y2_1, y2_2)
+# 변수 선언 및 입력
+n = 2
+rects = [
+    tuple(map(int, input().split()))
+    for _ in range(n)
+]
 
-overlap_width = max(0, x_overlap_end - x_overlap_start)
-overlap_height = max(0, y_overlap_end - y_overlap_start)
-overlap_area = overlap_width * overlap_height
+checked = [
+    [0] * (MAX_R + 1)
+    for _ in range(MAX_R + 1)
+]
 
-remaining_area = (x2_1 - x1_1) * (y2_1 - y1_1) - overlap_area
+for i, (x1, y1, x2, y2) in enumerate(rects, start=1):
+    # OFFSET을 더해줍니다.
+    x1, y1 = x1 + OFFSET, y1 + OFFSET
+    x2, y2 = x2 + OFFSET, y2 + OFFSET
+    
+    # 직사각형에 주어진 순으로 1, 2 번호를 붙여줍니다.
+    # 격자 단위로 진행하는 문제이므로
+    # x2, y2에 등호가 들어가지 않음에 유의합니다.
+    for x in range(x1, x2):
+        for y in range(y1, y2):
+            checked[x][y] = i
 
-if remaining_area == 0:
-    print(0)
+# 1, 2 순으로 붙였는데도
+# 아직 숫자 1로 남아있는 곳들 중 최대 최소 x, y 값을 전부 계산합니다.
+min_x, max_x, min_y, max_y = MAX_R, 0, MAX_R, 0
+first_rect_exist = False
+for x in range(MAX_R + 1):
+    for y in range(MAX_R + 1):
+        if checked[x][y] == 1:
+            first_rect_exist = True
+            min_x = min(min_x, x)
+            max_x = max(max_x, x)
+            min_y = min(min_y, y)
+            max_y = max(max_y, y)
+
+# 넓이를 계산합니다.
+# Case 1. 첫 번째 직사각형이 전혀 남아있지 않다면 넓이는 0입니다.
+if not first_rect_exist:
+    area = 0
+# Case 2. 첫 번째 직사각형이 남아있다면, 넓이를 계산합니다.
 else:
-    min_x1 = min(x1_1, x1_2)
-    max_x2 = max(x2_1, x2_2)
-    min_y1 = min(y1_1, y1_2)
-    max_y2 = max(y2_1, y2_2)
-    
-    width = max_x2 - min_x1
-    height = max_y2 - min_y1
-    
-    print(width * height)
+    area = (max_x - min_x + 1) * (max_y - min_y + 1)
+
+print(area)
