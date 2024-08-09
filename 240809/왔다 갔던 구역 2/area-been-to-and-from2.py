@@ -1,26 +1,23 @@
 n = int(input())
-position = 0
-visited = {}
+commands = [input().split() for _ in range(n)]
 
-for _ in range(n):
-    x, direction = input().split()
+visited = set()
+overlapped = set()
+position = 0
+
+for x, direction in commands:
     x = int(x)
-    
-    if direction == 'R':
+    if direction == "R":
         for i in range(position + 1, position + x + 1):
             if i in visited:
-                visited[i] += 1
-            else:
-                visited[i] = 1
+                overlapped.add(i)
+            visited.add(i)
         position += x
-    elif direction == 'L':
+    elif direction == "L":
         for i in range(position - 1, position - x - 1, -1):
             if i in visited:
-                visited[i] += 1
-            else:
-                visited[i] = 1
+                overlapped.add(i)
+            visited.add(i)
         position -= x
 
-overlap_count = sum(1 for count in visited.values() if count > 1)
-
-print(overlap_count)
+print(len(overlapped))
