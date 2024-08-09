@@ -1,28 +1,24 @@
 n = int(input())
-commands = [input().split() for _ in range(n)]
 
-tiles = {}
-position = 0
+grid = ['' for _ in range(200001)]
 
-for x, direction in commands:
-    x = int(x)
-    
-    if direction == "R":
-        for i in range(position, position + x):
-            if i in tiles:
-                tiles[i] = not tiles[i]
-            else:
-                tiles[i] = True
-        position += x - 1
-    elif direction == "L":
-        for i in range(position, position - x, -1):
-            if i in tiles:
-                tiles[i] = not tiles[i]
-            else:
-                tiles[i] = False
-        position -= x - 1
+start_pos = 100000
+direction = 0
+colour = ''
+for _ in range(n):
+    instruction = input().split()
+    instruction[0] = int(instruction[0])
 
-white_tiles = sum(1 for v in tiles.values() if not v)
-black_tiles = sum(1 for v in tiles.values() if v)
+    if instruction[1] == 'L':
+        direction = -1
+        colour = 'W'
+    else:
+        direction = 1
+        colour = 'B'
 
-print(white_tiles, black_tiles)
+    for i in range(start_pos, start_pos + (instruction[0] * direction), direction):
+        grid[i] = colour
+        start_pos = i
+
+print(len([x for x in grid if x == 'W']), end=' ')
+print(len([x for x in grid if x == 'B']))
