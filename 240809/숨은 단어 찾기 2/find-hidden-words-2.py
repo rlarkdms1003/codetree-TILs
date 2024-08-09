@@ -1,33 +1,40 @@
-def count_lee_in_grid(grid, n, m):
-    count = 0
-    target = "LEE"
-    length = len(target)
-    
-    directions = [
-        (0, 1),  # 가로 (오른쪽)
-        (1, 0),  # 세로 (아래쪽)
-        (1, 1),  # 대각선 (우하단)
-        (1, -1)  # 대각선 (좌하단)
-    ]
-    
-    for i in range(n):
-        for j in range(m):
-            for dx, dy in directions:
-                found = True
-                for k in range(length):
-                    ni = i + k * dx
-                    nj = j + k * dy
-                    if ni < 0 or ni >= n or nj < 0 or nj >= m or grid[ni][nj] != target[k]:
-                        found = False
-                        break
-                if found:
-                    count += 1
-    
-    return count
+# 변수 선언 및 입력
+n, m = tuple(map(int, input().split()))
+arr = [
+    input()
+    for _ in range(n)
+]
 
-# 입력 처리
-n, m = map(int, input().split())
-grid = [input().strip() for _ in range(n)]
+def in_range(x, y):
+    return 0 <= x and x < n and 0 <= y and y < m
 
-# 결과 출력
-print(count_lee_in_grid(grid, n, m))
+dxs, dys = [1, 1, 1, -1, -1, -1, 0, 0], [-1, 0, 1, -1, 0, 1, -1, 1]
+
+# 모든 좌표에서 다 확인해봅니다.
+cnt = 0
+for i in range(n):
+	# 격자를 벗어나지 않을 범위로만 잡습니다.
+	for j in range(m):
+		
+		if arr[i][j] != 'L':
+			continue
+		
+		for dx, dy in zip(dxs, dys):
+			curt = 1
+			curx = i
+			cury = j
+			while True:
+				nx = curx + dx
+				ny = cury + dy
+				if in_range(nx, ny) == False:
+					break
+				if arr[nx][ny] != 'E':
+					break
+				curt += 1
+				curx = nx
+				cury = ny
+			
+			if curt >= 3:
+				cnt += 1
+
+print(cnt)
